@@ -29,7 +29,7 @@ public class HackerNewsClient : IHackerNewsClient
         return list;
     }
 
-    public async Task<HackerStory> GetStoryAync(int storyId)
+    public async Task<HackerStory> GetStoryAsync(int storyId)
     {
         HackerStory hackerStory = default!;
 

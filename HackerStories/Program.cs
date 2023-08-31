@@ -2,6 +2,7 @@ using HackerStories.Interfaces;
 using HackerStories.Mappers;
 using HackerStories.Model;
 using HackerStories.Services;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using RestSharp;
 
@@ -21,6 +22,7 @@ builder.Services.AddScoped<IRestClient>(provider =>
     var baseUrl = builder.Configuration.GetSection("HackerNews:Url").Value;
     return new RestClient(baseUrl);
 });
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 

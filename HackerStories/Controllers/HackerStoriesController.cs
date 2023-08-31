@@ -20,6 +20,7 @@ public class HackerStoriesController : ControllerBase
     [HttpGet("{numberOfStories}")]
     public async Task<IEnumerable<StoryDto>> GetBestStoriesAsync(int numberOfStories)
     {
+        _logger.LogInformation($"Request of {numberOfStories} best stories");
         return await _hackerStoriesService.GetBestStoriesAsync(numberOfStories);
     }
 }
